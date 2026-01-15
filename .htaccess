@@ -1,0 +1,20 @@
+# Prevent directory listing
+Options -Indexes
+
+# Error pages
+ErrorDocument 404 /smkn2bengkalis/profile/index.php
+
+# Set default charset
+AddDefaultCharset UTF-8
+
+# Protect config directory
+<FilesMatch "^(database\.php)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Enable mod_rewrite
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /smkn2bengkalis/
+</IfModule>
